@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shawearn.mapper.UserMapper">
+    <select id="selectById" resultType="com.shawearn.model.User">
+        select u.id as id, u.user_name as userName, u.descript as descript
+        from t_user as u where u.id = #{id}
+    </select>
+
+    <insert id="insertUser" parameterType="com.shawearn.model.User">
+        insert into t_user(user_name, descript) values (#{userName}, #{descript})
+    </insert>
+</mapper>
